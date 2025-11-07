@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  subconverter:
+    build:
+      context: ./subconverter
+      dockerfile: Dockerfile.local
+    container_name: subconverter
+    ports:
+      - "25500:25500"
+    restart: always
+    networks:
+      - clash-converter
+
+  sub-web:
+    build:
+      context: ./sub-web
+      dockerfile: Dockerfile.local
+    container_name: sub-web
+    ports:
+      - "8080:80"
+    restart: always
+    networks:
+      - clash-converter
+    depends_on:
+      - subconverter
+
+networks:
+  clash-converter:
+    driver: bridge
