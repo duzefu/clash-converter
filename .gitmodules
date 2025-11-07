@@ -1,0 +1,9 @@
+[submodule "ACL4SSR"]
+	path = ACL4SSR
+	url = git@github.com:duzefu/ACL4SSR.git
+[submodule "subconverter"]
+	path = subconverter
+	url = git@github.com:duzefu/subconverter.git
+[submodule "sub-web"]
+	path = sub-web
+	url = git@github.com:duzefu/sub-web.git
