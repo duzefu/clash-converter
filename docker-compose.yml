@@ -3,8 +3,8 @@ version: '3.8'
 services:
   subconverter:
     build:
-      context: ./subconverter
-      dockerfile: Dockerfile.local
+      context: .
+      dockerfile: subconverter/Dockerfile.local
     container_name: subconverter
     ports:
       - "25500:25500"
