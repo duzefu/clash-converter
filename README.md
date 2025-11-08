@@ -19,12 +19,33 @@
 
 ### 使用 Docker Compose (推荐)
 
+#### 方式一：使用 Docker Hub 镜像（最快）
+
+直接使用已发布的镜像，无需本地构建：
+
+```bash
+# 克隆仓库
+git clone https://github.com/yourusername/clash-converter.git
+cd clash-converter
+
+# 使用 Docker Hub 镜像启动
+docker-compose -f docker-compose.hub.yml up -d
+
+# 访问服务
+# 前端界面: http://localhost:8080
+# 后端 API: http://localhost:25500
+```
+
+#### 方式二：本地构建镜像
+
+从源码构建（适用于修改代码后）：
+
 ```bash
 # 克隆仓库及子模块
 git clone --recursive https://github.com/yourusername/clash-converter.git
 cd clash-converter
 
-# 一键启动
+# 构建并启动
 docker-compose up -d --build
 
 # 访问服务

@@ -39,6 +39,28 @@ This repository contains a Clash subscription converter system with three main c
 ## Development Commands
 
 ### Quick Start with Docker Compose (Recommended)
+
+**Option 1: Using Docker Hub images (fastest)**
+```bash
+# Deploy using pre-built images from Docker Hub
+docker-compose -f docker-compose.hub.yml up -d
+
+# Access services
+# Frontend: http://localhost:8080
+# Backend: http://localhost:25500
+
+# Stop services
+docker-compose -f docker-compose.hub.yml down
+
+# View logs
+docker-compose -f docker-compose.hub.yml logs -f
+```
+
+Docker Hub images:
+- `duzefu/clash-converter-subconverter:latest`
+- `duzefu/clash-converter-sub-web:latest`
+
+**Option 2: Building local images**
 ```bash
 # One-command deployment (builds local images)
 docker-compose up -d --build
