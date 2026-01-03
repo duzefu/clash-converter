@@ -1,10 +1,9 @@
-version: '3.8'
-
 services:
   subconverter:
     build:
       context: .
       dockerfile: subconverter/Dockerfile.local
+    image: duzefu/clash-converter-subconverter:latest
     container_name: subconverter
     ports:
       - "25500:25500"
@@ -16,6 +15,7 @@ services:
     build:
       context: ./sub-web
       dockerfile: Dockerfile.local
+    image: duzefu/clash-converter-sub-web:latest
     container_name: sub-web
     ports:
       - "8080:80"
