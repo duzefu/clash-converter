@@ -36,6 +36,8 @@ This repository contains a Clash subscription converter system with three main c
 - Contains rulesets for various clients
 - Referenced by subconverter through `base/config/*.ini` files
 
+> **重要**：`subconverter/Dockerfile.local` 构建时，第 59-60 行先将 `subconverter/base/config/` 复制到镜像，**随后**再用 `ACL4SSR/Clash/config/` 覆盖同一目录。因此修改路由规则时，必须修改 `ACL4SSR/Clash/config/*.ini`（子模块内），修改 `subconverter/base/config/` 不会生效。
+
 ## Development Commands
 
 ### Quick Start with Docker Compose (Recommended)
